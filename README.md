@@ -7,3 +7,8 @@ Se quiser acessar a maquina via SSH altere o key_name na pasta main pela sua cha
 Se não souber como o terraform funciona veja esse guia primeiro
 
 https://www.notion.so/Terraforming-cfb2c0894a944b3b8de25dc35f3149ff
+
+
+terraform e ansible:
+
+https://www.notion.so/Integrando-Ansible-com-Terraform-com-aws-e9eef9ac3fdf4c8584381b3fb74f3ab9

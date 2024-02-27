@@ -15,7 +15,7 @@
           - django
           - djangorestframework
 
-    - name: Check if setup directory already exists
+    - name: Verifica se arquivo setup já existe
       stat:
         path: /home/ubuntu/tcc/setup
       register: setup_directory

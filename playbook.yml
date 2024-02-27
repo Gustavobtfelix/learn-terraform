@@ -14,3 +14,24 @@
         name:
           - django
           - djangorestframework
+
+    - name: Check if setup directory already exists
+      stat:
+        path: /home/ubuntu/tcc/setup
+      register: setup_directory
+
+    - name: Iniciando o projeto
+      shell: '. /home/ubuntu/tcc/venv/bin/activate; django-admin startproject setup /home/ubuntu/tcc/'
+      when: not setup_directory.stat.exists
+
+    - name: Alterando o hosts do settings
+      lineinfile:
+        path: /home/ubuntu/tcc/setup/settings.py
+        regexp: 'ALLOWED_HOSTS'
+        line: 'ALLOWED_HOSTS = ["*"]'
+        backrefs: yes
+    
+    - name: Iniciando Servidor
+      shell: '. /home/ubuntu/tcc/venv/bin/activate; cd /home/ubuntu/tcc; nohup python manage.py runserver 0.0.0.0:8000 &'
+      async: 0
+      poll: 0

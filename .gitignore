@@ -8,3 +8,6 @@
 
 *.pem
 *.hcl
+*.pub
+IaC-DEV
+Iac-Prod
